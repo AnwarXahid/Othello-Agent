@@ -1,21 +1,19 @@
-import java.util.Scanner;
-
 public class OthelloDepthEvaluationValueTest {
 
-    private static AgentType agentOneEvaluationFunction = AgentType.SIMPLE;
-//    private static AgentType agentOneEvaluationFunction = AgentType.PRIORITY;
-    private static int agentOneDepth = -1;
+    private static final AgentType AGENT_ONE_EVALUATION_FUNCTION = AgentType.SIMPLE;
+//    private static AgentType AGENT_ONE_EVALUATION_FUNCTION = AgentType.PRIORITY;
+    private static final int AGENT_ONE_DEPTH = -1;
 
-    private static AgentType agentTwoEvaluationFunction = AgentType.SIMPLE;
-    //    private static AgentType agentTwoEvaluationFunction = AgentType.PRIORITY;
-    private static int agentTwoDepth = -1;
+    private static final AgentType AGENT_TWO_EVALUATION_FUNCTION = AgentType.PRIORITY;
+    //    private static AgentType AGENT_TWO_EVALUATION_FUNCTION = AgentType.PRIORITY;
+    private static final int AGENT_TWO_DEPTH = -1;
 
     public static void main(String[] args) {
 //        OthelloAgent agentOne = new OthelloAgent(agentOneEvaluationFunction);
 //        OthelloAgent agentTwo = new OthelloAgent(agentTwoEvaluationFunction);
 
-        OthelloAgent agentOne = new OthelloAgent(agentOneEvaluationFunction, agentOneDepth);
-        OthelloAgent agentTwo = new OthelloAgent(agentTwoEvaluationFunction, agentTwoDepth);
+        OthelloAgent agentOne = new OthelloAgent(AGENT_ONE_EVALUATION_FUNCTION, AGENT_ONE_DEPTH);
+        OthelloAgent agentTwo = new OthelloAgent(AGENT_TWO_EVALUATION_FUNCTION, AGENT_TWO_DEPTH);
 
         OthelloGameState state = new OthelloGameState();
         boolean agentOneMove = true;
