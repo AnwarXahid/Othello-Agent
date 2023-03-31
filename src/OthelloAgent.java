@@ -175,8 +175,8 @@ public class OthelloAgent {
         return evaluatedValue;
     }
 
-    public int getNaiveEvaluation(OthelloGameState inState) {
-        return inState.getWhiteScore() - inState.getBlackScore();
+    public int getNaiveEvaluation(OthelloGameState othelloGameState) {
+        return othelloGameState.getWhiteScore() - othelloGameState.getBlackScore();
     }
 
     public void fillThePriorityBoard() {
