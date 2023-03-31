@@ -2,61 +2,59 @@ import java.util.Scanner;
 
 public class OthelloDepthEvaluationValueTest {
 
+    private static AgentType agentOneEvaluationFunction = AgentType.SIMPLE;
+//    private static AgentType agentOneEvaluationFunction = AgentType.PRIORITY;
+    private static int agentOneDepth = -1;
 
-        public static void main(String[] args) {
-            OthelloAgent agent = new OthelloAgent();
+    private static AgentType agentTwoEvaluationFunction = AgentType.SIMPLE;
+    //    private static AgentType agentTwoEvaluationFunction = AgentType.PRIORITY;
+    private static int agentTwoDepth = -1;
 
-            OthelloGameState state = new OthelloGameState();
+    public static void main(String[] args) {
+//        OthelloAgent agentOne = new OthelloAgent(agentOneEvaluationFunction);
+//        OthelloAgent agentTwo = new OthelloAgent(agentTwoEvaluationFunction);
 
-            System.out.println("Initial Othello Board: ");
-            state.showBoard();
-            System.out.println("\n\n");
+        OthelloAgent agentOne = new OthelloAgent(agentOneEvaluationFunction, agentOneDepth);
+        OthelloAgent agentTwo = new OthelloAgent(agentTwoEvaluationFunction, agentTwoDepth);
 
-            String input;
-            int input_row, input_column;
-            boolean usersMove = true;
-            OthelloMove move;
+        OthelloGameState state = new OthelloGameState();
+        boolean agentOneMove = true;
 
-            while (!state.gameIsOver()) {
+        System.out.println("Initial Othello Board: ");
+        state.showBoard();
+        System.out.println("\n\n");
 
-                if (usersMove) {
-                    Scanner scan = new Scanner(System.in);
-                    System.out.println("Your valid moves are: " + state.getValidMoves().toString());
-                    System.out.print("Enter your move [row column]: ");
-                    input = scan.nextLine();
-                    input_row = Integer.parseInt(input.split(" ")[0]);
-                    input_column = Integer.parseInt(input.split(" ")[1]);
+        OthelloMove move;
 
-                    if (state.isValidMove(input_row, input_column)) {
-                        state.makeMove(input_row, input_column);
-                        System.out.println("Othello Board after user's move: ");
-                        state.showBoard();
-                        System.out.println("\n\n");
-                        usersMove = false;
-                    } else {
-                        System.out.println("Not a valid move. Try another! ");
-                    }
-                } else {
+        while (!state.gameIsOver()) {
 
-                    move = agent.chooseMove(state);
-                    state.makeMove(move.getRow(), move.getColumn());
-                    System.out.println("Othello Board after agent's move: " + move.getRow() + " " + move.getColumn());
-                    state.showBoard();
-                    System.out.println("\n\n");
-                    usersMove = true;
-                }
-            }
-
-            System.out.println("Game Over!");
-            System.out.println("User's point: " + state.getBlackScore());
-            System.out.println("Agent's point: " + state.getWhiteScore());
-
-            if (state.getBlackScore() > state.getWhiteScore()) {
-                System.out.println("User wins the game!");
-            } else if (state.getBlackScore() < state.getWhiteScore()) {
-                System.out.println("Agent wins the game!");
+            if (agentOneMove) {
+                move = agentOne.chooseMove(state);
+                state.makeMove(move.getRow(), move.getColumn());
+                System.out.println("Othello Board after agent-One's move: " + move.getRow() + " " + move.getColumn());
+                state.showBoard();
+                System.out.println("\n\n");
             } else {
-                System.out.println("Draw!");
+                move = agentTwo.chooseMove(state);
+                state.makeMove(move.getRow(), move.getColumn());
+                System.out.println("Othello Board after agent-Two's move: " + move.getRow() + " " + move.getColumn());
+                state.showBoard();
+                System.out.println("\n\n");
             }
+            agentOneMove = !agentOneMove;
         }
+
+        System.out.println("Game Over!");
+        System.out.println("Agent-One's point: " + state.getBlackScore());
+        System.out.println("Agent-Two's point: " + state.getWhiteScore());
+
+        if (state.getBlackScore() > state.getWhiteScore()) {
+            System.out.println("Agent-One wins the game!");
+        } else if (state.getBlackScore() < state.getWhiteScore()) {
+            System.out.println("Agent-Two wins the game!");
+        } else {
+            System.out.println("Draw!");
+        }
+    }
+
 }

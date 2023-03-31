@@ -4,20 +4,20 @@ public class OthelloAgent {
     public static final int ROW_NUMBER = 8;
     public static final int COLUMN_NUMBER = 8;
     private final int[][] priorityBoard = new int[8][8];
-    private final int evaluationFunctionType;
+    private final AgentType evaluationFunctionType;
     private final int depth;
 
     public OthelloAgent() {
-        this.evaluationFunctionType = 1;
+        this.evaluationFunctionType = AgentType.PRIORITY;
         this.depth = -1;
     }
 
-    public OthelloAgent(int evaluationFunctionType) {
+    public OthelloAgent(AgentType evaluationFunctionType) {
         this.evaluationFunctionType = evaluationFunctionType;
         depth = -1;
     }
 
-    public OthelloAgent(int evaluationFunctionType, int depth) {
+    public OthelloAgent(AgentType evaluationFunctionType, int depth) {
         this.evaluationFunctionType = evaluationFunctionType;
         this.depth = depth;
     }
@@ -96,7 +96,7 @@ public class OthelloAgent {
     public int alphaBeta(OthelloGameState othelloGameState, int depth, int alpha, int beta) {
         if (depth == 0 || othelloGameState.gameIsOver()) {
 
-            if (evaluationFunctionType == 1) {
+            if (evaluationFunctionType == AgentType.PRIORITY) {
                 return getPriorityEvaluation(othelloGameState);
             } else {
                 return getNaiveEvaluation(othelloGameState);
