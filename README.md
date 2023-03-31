@@ -22,23 +22,23 @@ JDK 1.8 - is the baseline JDK against which this project is developed.
 
 
 ### Probe the Othello-Agent
->I've implemented two evaluation functions for Othello Agent. First one is implemented in
-> <i>getNaiveEvaluation</i> method and Second one is implemented in
-> <i>getPriorityEvaluation</i> method, both of them are residing in 
-> <b>OthelloAgent.java</b> file.
+I've implemented two evaluation functions for Othello Agent. First one is implemented in
+<i>getNaiveEvaluation</i> method and Second one is implemented in
+<i>getPriorityEvaluation</i> method, both of them are residing in 
+<b>OthelloAgent.java</b> file.
 
->>**Input:** Agent-Type, Depth
->>**Output:** Winner, Game Points
-> 
-> 1. Open the project repository
-> 2. Go to <b>\src</b> repository
-> 3. Open the **OthelloDepthEvaluationValueTest.java** file
-> 4. Set evaluation function for agent one to final static **AGENT_ONE_EVALUATION_FUNCTION** variable
-> 5. Set depth for agent one to final static **AGENT_ONE_DEPTH** variable
-> 6. Set evaluation function for agent two to final static **AGENT_TWO_EVALUATION_FUNCTION** variable
-> 7. Set depth for agent two to final static **AGENT_TWO_DEPTH** variable
-> 8. Run the file and compare the outputs
-> 9. Happy testing!
+>**Input:** Agent-Type, Depth
+>**Output:** Winner, Game Points
+
+1. Open the project repository
+2. Go to <b>\src</b> repository
+3. Open the **OthelloDepthEvaluationValueTest.java** file
+4. Set evaluation function for agent one to final static **AGENT_ONE_EVALUATION_FUNCTION** variable
+5. Set depth for agent one to final static **AGENT_ONE_DEPTH** variable
+6. Set evaluation function for agent two to final static **AGENT_TWO_EVALUATION_FUNCTION** variable
+7. Set depth for agent two to final static **AGENT_TWO_DEPTH** variable
+8. Run the file and compare the outputs
+9. Happy testing!
 
 
 
