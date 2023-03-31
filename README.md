@@ -27,7 +27,7 @@ I've implemented two evaluation functions for Othello Agent. First one is implem
 <i>getPriorityEvaluation</i> method, both of them are residing in 
 <b>OthelloAgent.java</b> file.
 
->**Input:** Agent-Type, Depth
+>**Input:** Agent-Type, Depth<br>
 >**Output:** Winner, Game Points
 
 1. Open the project repository

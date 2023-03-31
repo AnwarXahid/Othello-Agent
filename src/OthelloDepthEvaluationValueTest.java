@@ -2,11 +2,13 @@ public class OthelloDepthEvaluationValueTest {
 
     private static final AgentType AGENT_ONE_EVALUATION_FUNCTION = AgentType.SIMPLE;
 //    private static AgentType AGENT_ONE_EVALUATION_FUNCTION = AgentType.PRIORITY;
-    private static final int AGENT_ONE_DEPTH = -1;
+    private static final int AGENT_ONE_DEPTH = 4;
+//    private static final int AGENT_ONE_DEPTH = -1; // default value
 
-    private static final AgentType AGENT_TWO_EVALUATION_FUNCTION = AgentType.PRIORITY;
+    private static final AgentType AGENT_TWO_EVALUATION_FUNCTION = AgentType.SIMPLE;
     //    private static AgentType AGENT_TWO_EVALUATION_FUNCTION = AgentType.PRIORITY;
-    private static final int AGENT_TWO_DEPTH = -1;
+    private static final int AGENT_TWO_DEPTH = 8;
+//    private static final int AGENT_TWO_DEPTH = -1; // default value
 
     public static void main(String[] args) {
 //        OthelloAgent agentOne = new OthelloAgent(agentOneEvaluationFunction);
